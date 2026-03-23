@@ -37,9 +37,9 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 
 # If using Vite or Laravel Mix for assets (optional)
 # Uncomment these lines if you have node_modules and package.json
-RUN apt-get install -y nodejs npm
-RUN npm install
-RUN npm run build
+#RUN apt-get install -y nodejs npm
+#RUN npm install
+#RUN npm run build
 
 # Expose port for Render
 EXPOSE 10000
