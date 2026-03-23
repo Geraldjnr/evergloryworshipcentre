@@ -6,7 +6,8 @@ WORKDIR /var/www/html
 RUN apt-get update && apt-get install -y \
     git unzip zip libzip-dev \
     libpng-dev libjpeg-dev libfreetype6-dev \
-    && docker-php-ext-install pdo pdo_mysql zip gd
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip gd
 
 # Enable rewrite
 RUN a2enmod rewrite
@@ -26,6 +27,8 @@ RUN chown -R www-data:www-data storage bootstrap/cache
 # Set Apache to use Laravel public folder
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
 
+# Expose port
 EXPOSE 10000
 
-CMD ["apache2-foreground"]
+# Run migrations then start Apache
+CMD php artisan migrate --force && apache2-foreground
