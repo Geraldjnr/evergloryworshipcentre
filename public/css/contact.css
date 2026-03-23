@@ -1,0 +1,40 @@
+body{
+  font-family:"Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+/* Two-column layout for desktop */
+.contact-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    font-family:"Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+/* Left column - form */
+.contact-form {
+    flex: 2;
+}
+
+/* Right column - info cards */
+.contact-info {
+    flex: 1;
+}
+
+.contact-info .card {
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}

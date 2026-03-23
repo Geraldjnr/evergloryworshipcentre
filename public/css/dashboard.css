@@ -1,0 +1,50 @@
+.dashboard {
+    display: flex;
+    gap: 20px; /* space between sidebar and content */
+}
+
+/* Sidebar (NO FULL BACKGROUND) */
+.sidebar {
+    width: 220px;
+}
+
+/* Sidebar menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Sidebar items */
+.sidebar ul li {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Hover */
+.sidebar ul li:hover {
+    background: #00b4d8;
+    color: white;
+}
+
+/* Content area */
+.content {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-content {
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.modal-header {
+    background: #0d1b2a;
+    color: white;
+}
